@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr"><head>
+<title>Select question to change | Django site admin</title>
+<link rel="stylesheet" href="/static/admin/css/base.css">
+
+  <link rel="stylesheet" href="/static/admin/css/dark_mode.css">
+
+
+  <link rel="stylesheet" href="/static/admin/css/nav_sidebar.css">
+  <script src="/static/admin/js/nav_sidebar.js" defer=""></script>
+
+
+
+  <link rel="stylesheet" href="/static/admin/css/changelists.css">
+
+
+    <script src="/admin/jsi18n/"></script>
+
+
+
+
+
+
+
+<script src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script src="/static/admin/js/jquery.init.js"></script>
+<script src="/static/admin/js/core.js"></script>
+<script src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script src="/static/admin/js/actions.js"></script>
+<script src="/static/admin/js/urlify.js"></script>
+<script src="/static/admin/js/prepopulate.js"></script>
+<script src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+<script src="/static/admin/js/filters.js" defer=""></script>
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="/static/admin/css/responsive.css">
+
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+<body class=" app-polls model-question change-list" data-admin-utc-offset="0">
+
+<!-- Container -->
+<div id="container">
+
+
+    <!-- Header -->
+
+    <div id="header">
+        <div id="branding">
+
+    {% block branding %}
+        <h1 id="site-name"><a href="{% url 'admin:index' %}">Polls Administration</a></h1>
+    {% endblock %}
+
+        </div>
+
+
+        <div id="user-tools">
+
+                Welcome,
+                <strong>admin</strong>.
+
+
+
+                    <a href="/">View site</a> /
+
+
+
+
+
+
+                <a href="/admin/password_change/">Change password</a> /
+
+                <form id="logout-form" method="post" action="/admin/logout/">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="eHlW41geLZG25aV28I8wyAe6MHbCp7BB5Lm3AHDexVHCHxkeqTs8inCw540SBKUN">
+                    <button type="submit">Log out</button>
+                </form>
+
+        </div>
+
+
+
+    </div>
+
+    <!-- END Header -->
+
+<div class="breadcrumbs">
+<a href="/admin/">Home</a>
+› <a href="/admin/polls/">Polls</a>
+› Questions
+</div>
+
+
+
+    <div class="main shifted" id="main">
+
+
+
+<button class="sticky toggle-nav-sidebar" id="toggle-nav-sidebar" aria-label="Toggle navigation"></button>
+<nav class="sticky" id="nav-sidebar">
+  <input type="search" id="nav-filter" placeholder="Start typing to filter…" aria-label="Filter navigation items">
+
+
+
+
+    <div class="app-auth module">
+      <table>
+        <caption>
+          <a href="/admin/auth/" class="section" title="Models in the Authentication and Authorization application">Authentication and Authorization</a>
+        </caption>
+
+          <tbody><tr class="model-group">
+
+              <th scope="row"><a href="/admin/auth/group/">Groups</a></th>
+
+
+
+              <td><a href="/admin/auth/group/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+          <tr class="model-user">
+
+              <th scope="row"><a href="/admin/auth/user/">Users</a></th>
+
+
+
+              <td><a href="/admin/auth/user/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+      </tbody></table>
+    </div>
+
+    <div class="app-polls module current-app">
+      <table>
+        <caption>
+          <a href="/admin/polls/" class="section" title="Models in the Polls application">Polls</a>
+        </caption>
+
+          <tbody><tr class="model-question current-model">
+
+              <th scope="row"><a href="/admin/polls/question/" aria-current="page">Questions</a></th>
+
+
+
+              <td><a href="/admin/polls/question/add/" class="addlink">Add</a></td>
+
+
+
+          </tr>
+
+      </tbody></table>
+    </div>
+
+
+
+</nav>
+
+
+
+      <div class="content">
+
+
+
+        <!-- Content -->
+        <div id="content" class="">
+
+          <h1>Select question to change</h1>
+
+
+  <div id="content-main">
+
+        <ul class="object-tools">
+
+
+
+
+
+  <li>
+
+    <a href="/admin/polls/question/add/?_changelist_filters=q%3Dwhadsf%26o%3D" class="addlink">
+      Add question
+    </a>
+  </li>
+
+
+
+
+        </ul>
+
+
+    <div class="module filtered" id="changelist">
+      <div class="changelist-form-container">
+
+
+<div id="toolbar"><form id="changelist-search" method="get">
+<div><!-- DIV needed for valid HTML -->
+<label for="searchbar"><img src="/static/admin/img/search.svg" alt="Search"></label>
+<input type="text" size="40" name="q" value="whadsf" id="searchbar" autofocus="">
+<input type="submit" value="Search">
+
+    <span class="small quiet">0 results (<a href="?">1 total</a>)</span>
+
+
+
+
+    <input type="hidden" name="o" value="">
+
+</div>
+
+</form></div>
+
+
+
+
+        <form id="changelist-form" method="post" novalidate=""><input type="hidden" name="csrfmiddlewaretoken" value="eHlW41geLZG25aV28I8wyAe6MHbCp7BB5Lm3AHDexVHCHxkeqTs8inCw540SBKUN">
+
+
+
+
+<div class="actions">
+
+
+    <label>Action: <select name="action" required="">
+  <option value="" selected="">---------</option>
+
+  <option value="delete_selected">Delete selected questions</option>
+
+</select></label><input type="hidden" name="select_across" value="0" class="select-across">
+
+
+    <button type="submit" class="button" title="Run the selected action" name="index" value="0">Go</button>
+
+
+
+        <span class="action-counter" data-actions-icnt="0">0 of 0 selected</span>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<p class="paginator">
+
+0 questions
+
+
+</p>
+
+        </form>
+      </div>
+
+
+          <div id="changelist-filter">
+            <h2>Filter</h2>
+
+
+<details data-filter-title="date published" open="">
+  <summary>
+     By date published
+  </summary>
+  <ul>
+
+    <li class="selected">
+    <a href="?o=&amp;q=whadsf">Any date</a></li>
+
+    <li>
+    <a href="?o=&amp;pub_date__gte=2022-09-14+00%3A00%3A00%2B00%3A00&amp;pub_date__lt=2022-09-15+00%3A00%3A00%2B00%3A00&amp;q=whadsf">Today</a></li>
+
+    <li>
+    <a href="?o=&amp;pub_date__gte=2022-09-07+00%3A00%3A00%2B00%3A00&amp;pub_date__lt=2022-09-15+00%3A00%3A00%2B00%3A00&amp;q=whadsf">Past 7 days</a></li>
+
+    <li>
+    <a href="?o=&amp;pub_date__gte=2022-09-01+00%3A00%3A00%2B00%3A00&amp;pub_date__lt=2022-10-01+00%3A00%3A00%2B00%3A00&amp;q=whadsf">This month</a></li>
+
+    <li>
+    <a href="?o=&amp;pub_date__gte=2022-01-01+00%3A00%3A00%2B00%3A00&amp;pub_date__lt=2023-01-01+00%3A00%3A00%2B00%3A00&amp;q=whadsf">This year</a></li>
+
+  </ul>
+</details>
+
+          </div>
+
+
+    </div>
+  </div>
+
+
+          <br class="clear">
+        </div>
+        <!-- END Content -->
+        <div id="footer"></div>
+      </div>
+    </div>
+</div>
+<!-- END Container -->
+
+
+</body></html>
